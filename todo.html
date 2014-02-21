@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  	<script src="/Users/seanglang/Desktop/webbly/jquery/jquery-1.10.2.js"></script>
+  	<style type="text/css">
+  	li {
+  		list-style: none;
+  	}
+  	input:checked {
+  		display: none;
+  	}
+  	</style>
+
+	
+		<input type="text" id="item">
+		<input type="submit" onclick="addList(item.value)">
+	
+	<div><ul id="list"></ul></div>
+
+<script>
+function done(){
+
+}
+
+function addList(item)
+{
+		$('#list').append("<li><input type='checkbox'>"+item+"</li>");
+	
+}
+</script>
+
+</body>
+</html>
