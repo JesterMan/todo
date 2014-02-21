@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <body>
-  	<script src="/Users/seanglang/Desktop/webbly/jquery/jquery-1.10.2.js"></script>
-  	<style type="text/css">
-  	li {
-  		list-style: none;
-  	}
-  	input:checked {
-  		display: none;
-  	}
-  	</style>
+ 	<body>
+	  	<script src="/Users/seanglang/Desktop/webbly/jquery/jquery-1.10.2.js"></script>
+	  	<style type="text/css">
+		  	li {
+		  		list-style: none;
+		  	}
+	  	</style>
 
-	
-		<input type="text" id="item">
+	  		<!--input item for todo list, clear input box on focus -->
+		<input type="text" id="item" onfocus="this.value='';"> 
 		<input type="submit" onclick="addList(item.value)">
-	
-	<div><ul id="list"></ul></div>
 
-<script>
-function done(){
+			<!-- a div to put the list in -->
+		<div><ul id="list"></ul></div>
 
-}
+		<script>
 
-function addList(item)
-{
-		$('#list').append("<li><input type='checkbox'>"+item+"</li>");
-	
-}
-</script>
-
-</body>
+				// remove the item from the list
+			function done(){
+					$('input:checked').parent().css( "display", "none" );
+			}
+				// add the item to the list
+			function addList(item){
+				$('#list').append("<li><input onchange='done()' type='checkbox'>"+item+"</li>");
+			}
+		</script>
+	</body>
 </html>
